@@ -19,7 +19,13 @@ else:
 < menor que
 > mayor que
 <= menor o igual que
->= mayor o igual que    
+>= mayor o igual que  
+
+# Operadores logicos
+and Y
+or O
+! negacion
+not NO
 
 """
 
@@ -71,8 +77,8 @@ else:
 # Ejemplo 4
 print("\n############# EJEMPLO 4 ###############################")
 
-#dia = 1
-dia = int(input("Introduce el numero de la semana: "))
+dia = 1
+#dia = int(input("Introduce el numero de la semana: "))
 
 """
 if dia == 1:
@@ -105,3 +111,15 @@ elif dia == 5:
     print("Es viernes")
 else:
     print("Es fin de semana")
+
+# Ejemplo 5
+print("\n############# EJEMPLO 5 ###############################")
+
+edad_minima = 18
+edad_maxima = 65
+edad_oficial = int(input("¿Tienes edad de trabajar? Introduce tu edad: "))
+
+if edad_oficial >= 18 and edad_oficial <= 65:
+    print("Esta en edad de trabajar !!")
+else:
+    print("No está en edad de trabajar")

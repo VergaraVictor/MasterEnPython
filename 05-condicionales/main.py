@@ -38,11 +38,32 @@ else:
 # Ejemplo 2
 print("\n############# EJEMPLO 2 ###############################")
 
-# year = 2020
-year = int(input("En que año estamos?:"))
+year = 2020
+#year = int(input("En que año estamos?:"))
 
 if year < 2021:
     print("Estamos antes de 2021 !!")
 else:
     print("Es una año posterior 2021")
 
+
+# Ejemplo 3
+print("\n############# EJEMPLO 3 ###############################")
+
+nombre = "Víctor Vergara"
+ciudad = "Barcelona"
+continente = "Europa"
+edad = 18
+mayoria_edad = 18
+
+
+if edad >= mayoria_edad:
+    print(f"{nombre} es mayor de edad !!")
+
+    if continente != "Europa":
+        print("El usuario No es Europeo")
+    else:
+        print(f"Es Europeo y de ciudad {ciudad}")
+    
+else:
+    print(f"{nombre} NO es mayor de edad")

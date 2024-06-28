@@ -117,9 +117,41 @@ print("\n############# EJEMPLO 5 ###############################")
 
 edad_minima = 18
 edad_maxima = 65
-edad_oficial = int(input("¿Tienes edad de trabajar? Introduce tu edad: "))
+#edad_oficial = int(input("¿Tienes edad de trabajar? Introduce tu edad: "))
+edad_oficial = 18
 
 if edad_oficial >= 18 and edad_oficial <= 65:
     print("Esta en edad de trabajar !!")
 else:
     print("No está en edad de trabajar")
+
+# Ejemplo 6
+print("\n############# EJEMPLO 6 ###############################")
+
+pais = "Rusia"
+
+if pais == "Mexico" or pais == "España" or pais == "Colombia":
+    print(f"{pais} es un pais de habla hispana !!")
+else:
+    print(f"{pais} no es un pais de habla hispana :(")
+
+
+# Ejemplo 7
+print("\n############# EJEMPLO 7 ###############################")
+
+pais = "España"
+
+if not (pais == "Mexico" or pais == "España" or pais == "Colombia"):
+    print(f"{pais} NO es un pais de habla hispana :(")
+else:
+    print(f"{pais} SI es un pais de habla hispana !!")
+
+# Ejemplo 8
+print("\n############# EJEMPLO 8 ###############################")
+
+pais = "EEUU"
+
+if pais != "Mexico" and pais != "España" and pais != "Colombia":
+    print(f"{pais} NO es un pais de habla hispana :(")
+else:
+    print(f"{pais} SI es un pais de habla hispana !!")

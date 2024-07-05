@@ -65,3 +65,17 @@ print("###### EJEMPLO 3.1 ###########")
 
 for numero_tabla in range(1, 11):
     tabla(numero_tabla)
+
+
+# Ejemplo 4
+print("###### EJEMPLO 4 ###########")
+
+# Parametros opcionales
+
+def getEmpleado(nombre, dni = None):
+    print("EMPLEADO")
+    print(f"Nombre: {nombre}")
+    if dni != None:
+        print(f"DNI: {dni}")
+
+getEmpleado("Victor Vergara", 454478)

@@ -136,3 +136,11 @@ def devuelveTodo(nombre, apellidos):
     return texto
 
 print(devuelveTodo("Victor", "Vergara"))
+
+# Ejemplo 8: Funciones Lambda Definida en una linea y concreta
+print("\n###### EJEMPLO 8 ###########")
+
+dime_el_year = lambda year: f"El año es {year * 50}"
+
+print(dime_el_year(2034))
+

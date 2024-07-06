@@ -117,3 +117,22 @@ def calculadora(numero1, numero2, basicas = False):
     return cadena
 
 print(calculadora(56, 5, False))
+
+# Ejemplo 7
+print("\n###### EJEMPLO 7 ###########")
+
+def getNombre(nombre):
+    texto = f"El nombre es: {nombre}"
+    return texto
+
+def getApellidos(apellidos):
+    texto = f"Los apellidos son: {apellidos}"
+    return texto
+
+print(getNombre("Victor"), getApellidos("Vergara"))
+
+def devuelveTodo(nombre, apellidos):
+    texto = getNombre(nombre) + "\n" + getApellidos(apellidos)
+    return texto
+
+print(devuelveTodo("Victor", "Vergara"))

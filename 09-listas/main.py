@@ -29,3 +29,9 @@ print(peliculas[-2])
 print(cantantes[1:3])
 print(peliculas[2:])
 print(peliculas)
+
+
+# Añadir elemento a la lista
+cantantes.append("Kase O")
+cantantes.append("Natos y Waor")
+print(cantantes)

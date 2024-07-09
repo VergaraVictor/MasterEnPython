@@ -35,3 +35,16 @@ print(peliculas)
 cantantes.append("Kase O")
 cantantes.append("Natos y Waor")
 print(cantantes)
+
+# Recorrer Lista
+
+
+nueva_pelicula = ""
+while nueva_pelicula != "parar":
+    nueva_pelicula = input("Introduce la nueva pelicula: ")
+    if nueva_pelicula != "parar":
+        peliculas.append(nueva_pelicula)
+
+print("\n***********LISTADO PELICULAS****************")
+for pelicula in peliculas:
+    print(f"{peliculas.index(pelicula)+1}. {pelicula}")

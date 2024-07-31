@@ -2,7 +2,7 @@
 Ejercicio 1. Hacer un programa que tenga una lista
 de 8 numeros enteros y haga los siguiente:
 (hecho) - Recorrer la lista y mostrarla 
-- Hacer funcion que recorra listas de numeros y devuelva un string
+(hecho) - Hacer funcion que recorra listas de numeros y devuelva un string "LAs funciones se definen antes de llamarsen"
 - Ordenarla y mostrarla
 - Mostrar su longitud
 - Buscar algun elemento (que el usuario pida por teclado)
@@ -28,3 +28,5 @@ for numero in numeros:
     print(numero)
 
 print(mostrarLista(numeros))
+print(mostrarLista(numeros))
+print(mostrarLista(["Victor", "Juan", "Pepe"]))

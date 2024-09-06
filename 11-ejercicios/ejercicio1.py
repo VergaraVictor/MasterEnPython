@@ -5,7 +5,7 @@ de 8 numeros enteros y haga los siguiente:
 (hecho) - Hacer funcion que recorra listas de numeros y devuelva un string "LAs funciones se definen antes de llamarsen"
 (hecho)- Ordenarla y mostrarla
 (hecho)- Mostrar su longitud
-- Buscar algun elemento (que el usuario pida por teclado)
+(hecho)- Buscar algun elemento (que el usuario pida por teclado)
 """
 
 #  Crear la lista

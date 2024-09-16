@@ -16,3 +16,8 @@ if type(carro3) == Coche:
     print("Es un objeto correcto !!")
 else:
     print("No es un objeto !!")
+
+# Visibilidad
+print(carro.soy_publico)
+# print(carro.__soy_privado)
+print(carro.getPrivado())

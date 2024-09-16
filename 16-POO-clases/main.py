@@ -41,6 +41,8 @@ class Coche:
 # Crear objetos / Instanciar la clase
 coche = Coche()
 
+print("COCHE 1: ")
+
 coche.setColor("amarillo")
 coche.setModelo("Murcielago")
 
@@ -53,4 +55,17 @@ coche.acelerar()
 coche.acelerar()
 coche.frenar()
 
-print("Velocidad actual: ", coche.getVelocidad())
+print("Velocidad nueva: ", coche.getVelocidad())
+
+print("--------------------------------------------------")
+
+# Crear mas objetos
+coche2 = Coche()
+
+coche2.setColor("Verde")
+coche2.setModelo("Gallardo")
+
+print("COCHE 2: ")
+print(coche2.marca, coche2.getModelo(), coche2.getColor())
+
+print(type(coche2))

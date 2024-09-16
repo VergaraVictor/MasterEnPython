@@ -64,3 +64,14 @@ class Informatico(Persona):
     
     def repararPC(self):
         return "He reparado tu ordenador"
+    
+
+class TecnicoRedes(Informatico):
+    
+    def __init__(self):
+        super().__init__()
+        self.auditarRedes = 'Experto'
+        self.experienciaRedes = 15
+
+    def auditoria(self):
+        return "Estoy auditando una red"

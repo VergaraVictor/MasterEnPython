@@ -9,3 +9,10 @@ print(carro.getInfo())
 print(carro1.getInfo())
 print(carro2.getInfo())
 print(carro3.getInfo())
+
+# Detectar tipado
+carro3 = "Aleatorio"
+if type(carro3) == Coche:
+    print("Es un objeto correcto !!")
+else:
+    print("No es un objeto !!")

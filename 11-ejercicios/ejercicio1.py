@@ -41,17 +41,21 @@ print("##################Mostrar Longitud##############")
 print(len(numeros))
 
 # Busqueda en la lista
-print("##################Busqueda en la lista##############")
+try:
+    print("##################Busqueda en la lista##############")
 
-busqueda = int(input("Introduce el número: "))
-
-comprobar = isinstance(busqueda, int)
-while not comprobar or busqueda <= 0:
     busqueda = int(input("Introduce el número: "))
-else:
-    print(f"Has introducido el {busqueda}")
 
-print(f"#### Buscar en la lista el número {busqueda} ####")
+    comprobar = isinstance(busqueda, int)
+    while not comprobar or busqueda <= 0:
+        busqueda = int(input("Introduce el número: "))
+    else:
+        print(f"Has introducido el {busqueda}")
 
-search = numeros.index(busqueda)
-print(f"El número buscado en la lista, es el indice: {search}")
+    print(f"#### Buscar en la lista el número {busqueda} ####")
+
+
+    search = numeros.index(busqueda)
+    print(f"El número buscado en la lista, es el indice: {search}")
+except:
+    print("El número no esta en la lista, lo siento!!")

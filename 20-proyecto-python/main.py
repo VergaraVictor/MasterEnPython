@@ -6,6 +6,7 @@ Proyecto Python y Mysql:
 - Si elegimos login, identifica al usuario y nos preguntará
 - Crear nota, mostrar notas, borrarlas.
 """
+from usuarios import acciones
 
 print("""
     Acciones disponible:
@@ -13,16 +14,11 @@ print("""
         - login
 """)
 
+hazEl = acciones.Acciones()
+
 accion = input("Que quieres hacer?: ")
 
 if accion == "registro":
-    print("\nOk!! Vamos a registrarte en el sistema...")
-    nombre = input("¿Cual es tu nombre?: ")
-    apellidos = input("¿Cuales son tu apellidos?: ")
-    email = input("Introduce tu email: ")
-    nombre = input("Introduce tu contraseña: ")
-
+    hazEl.registro()
 elif accion == "login":
-    print("Vale!! Identidicate en el sistema...")
-    email = input("Introduce tu email: ")
-    nombre = input("Introduce tu contraseña: ")
+    hazEl.login()

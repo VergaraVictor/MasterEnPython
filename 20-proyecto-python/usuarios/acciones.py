@@ -39,29 +39,29 @@ class Acciones:
             print(f"Login incorrecto!! Intentalo más tarde")
 
     def proximasAcciones(self, usuario):
-        print("""
-        Acciones disponibles:
-        - Crear nota (crear)
-        - Mostrar tus notas (mostrar)
-        - Eliminar nota (eliminar)
-        - Salir (salir)
-        """)
+            print("""
+            Acciones disponibles:
+            - Crear nota (crear)
+            - Mostrar tus notas (mostrar)
+            - Eliminar nota (eliminar)
+            - Salir (salir)
+            """)
 
-        accion = input("¿Que quieres hacer?: ")
-        hazEl = notas.acciones.Acciones()
+            accion = input("¿Que quieres hacer?: ")
+            hazEl = notas.acciones.Acciones()
 
-        if accion == "crear":
-            hazEl.crear(usuario)
-            self.proximasAcciones(usuario)
+            if accion == "crear":
+                hazEl.crear(usuario)
+                self.proximasAcciones(usuario)
 
-        elif accion == "mostrar":
-            hazEl.mostrar(usuario)
-            self.proximasAcciones(usuario)
+            elif accion == "mostrar":
+                hazEl.mostrar(usuario)
+                self.proximasAcciones(usuario)
 
-        elif accion == "eliminar":
-            print("vamos a eliminar")
-            self.proximasAcciones(usuario)
+            elif accion == "eliminar":
+                print("vamos a eliminar")
+                self.proximasAcciones(usuario)
 
-        elif accion == "salir":
-            print(f"Ok {usuario[1]}, hasta pronto!!!")
-            exit()
+            elif accion == "salir":
+                print(f"Ok {usuario[1]}, hasta pronto!!!")
+                exit()

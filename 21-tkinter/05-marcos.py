@@ -14,6 +14,10 @@ marco.config(
     relief=SOLID
 )
 marco.pack(side=LEFT, anchor=SW)
+marco.pack_propagate(False)
+
+Label(marco, text="Primer marco").pack(side=BOTTOM, anchor=CENTER)
+
 
 marco = Frame(marco_padre, width=250, height=250)
 marco.config(

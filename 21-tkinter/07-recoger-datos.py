@@ -10,6 +10,12 @@ ventana.config(
 def getDato():
     resultado.set(dato.get())
 
+    if len(resultado.get()) >= 1:
+        texto_cogido.config(
+        bg="green",
+        fg="white"
+    )
+
 dato = StringVar()
 resultado = StringVar()
 
@@ -18,10 +24,6 @@ Entry(ventana, textvariable=dato).pack(anchor=NW)
 
 Label(ventana, text="Dato recogido: ").pack(anchor=NW)
 texto_cogido = Label(ventana, textvariable=resultado)
-texto_cogido.config(
-    bg="green",
-    fg="white"
-)
 texto_cogido.pack(anchor=NW)
 
 

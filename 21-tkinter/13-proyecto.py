@@ -7,12 +7,13 @@ Crear un programa que tenga:
 (hecho) - Opcion de salir
 (hecho) - Diferenttes Pantallas
 (hecho) - Formulario de añadir Productos
-(hecho)- Guardar datos Temporalmente
-- Mostrat datos listados en la pantalla home
+(hecho) - Guardar datos Temporalmente
+(hecho) - Mostrar datos listados en la pantalla home
 
 """
 
 from tkinter import *
+from tkinter import ttk
 
 # Definir Ventana
 ventana = Tk()
@@ -33,9 +34,10 @@ def home():
     )
     home_label.grid(row=0, column=0)
 
-    products_box.grid(row=1)
+    products_box.grid(row=2)
 
     # Listar Productos
+    """
     for product in products:
         if len(product) == 3:
             product.append("added")
@@ -43,6 +45,12 @@ def home():
             Label(products_box, text=product[1]).grid()
             Label(products_box, text=product[2]).grid()
             Label(products_box, text="-----------------").grid()
+    """
+
+    for product in products:
+        if len(product) == 3:
+            product.append("added")
+            products_box.insert('', 0, text=product[0], values= (product[1]))
 
     # ocultar otras pantallas
     add_label.grid_remove()
@@ -138,7 +146,14 @@ price_data = StringVar()
 
 # Definir campos de pantallas (Inicio)
 home_label = Label(ventana, text="Inicio")
-products_box = Frame(ventana, width=250)
+# products_box = Frame(ventana, width=250)
+Label(ventana).grid(row=1)
+# Label(products_box).grid(row=0)
+products_box = ttk.Treeview(height=12, columns=2)
+products_box.grid(row=1, column=0, columnspan=2)
+products_box.heading("#0", text="Producto", anchor=W)
+products_box.heading("#1", text="Precio", anchor=W)
+
 # Definir campos de pantallas (Añadir Producto)
 add_label = Label(ventana, text="Añadir Producto")
 # Definir campos de pantallas (Informacion)

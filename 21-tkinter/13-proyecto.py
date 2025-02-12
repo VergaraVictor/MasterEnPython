@@ -5,7 +5,7 @@ Crear un programa que tenga:
 (hecho) - No redimensionable
 (hecho) - un Menu (Inicio, Añadir, Información, Salir)
 (hecho) - Opcion de salir
-- Diferenttes Pantallas
+(hecho) - Diferenttes Pantallas
 - Formulario de añadir Productos
 - Guardar datos Temporalmente
 - Mostrat datos listados en la pantalla home
@@ -27,7 +27,7 @@ def home():
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=190,
         pady=20
     )
     home_label.grid(row=0, column=0)
@@ -40,14 +40,19 @@ def home():
     return True
 
 def add():
+    # encabezado
     add_label.config(
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=80,
         pady=20
     )
-    add_label.grid(row=0, column=0)
+    add_label.grid(row=0, column=0, columnspan=10)
+
+    # Campos del formulario
+    add_name_label.grid(row=1, column=0, padx=5, pady=5, sticky=E)
+    add_name_entry.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
     # ocultar otras pantallas
     home_label.grid_remove()
@@ -61,7 +66,7 @@ def info():
         fg="white",
         bg="black",
         font=("Arial", 30),
-        padx=20,
+        padx=120,
         pady=20
     )
     info_label.grid(row=0, column=0)
@@ -74,6 +79,10 @@ def info():
 
     return True
 
+# Variables Importantes
+name_data = StringVar()
+price_data = StringVar()
+
 # Definir campos de pantallas (Inicio)
 home_label = Label(ventana, text="Inicio")
 # Definir campos de pantallas (Añadir Producto)
@@ -81,6 +90,16 @@ add_label = Label(ventana, text="Añadir Producto")
 # Definir campos de pantallas (Informacion)
 info_label = Label(ventana, text="Información")
 data_label = Label(ventana, text="Creado por Víctor Vergara - 2025")
+
+# Campos del formulario
+add_name_label = Label(ventana, text="Nombre: ")
+add_name_entry = Entry(ventana, textvariable=name_data)
+
+add_price_label = Label(ventana, text="Precio: ")
+add_price_entry = Entry(ventana, textvariable=price_data)
+
+add_description_label = Label(ventana, text="Descripción: ")
+add_description_entry = Text(ventana)
 
 # cargar pantalla inicio
 home()

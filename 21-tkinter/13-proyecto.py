@@ -7,7 +7,7 @@ Crear un programa que tenga:
 (hecho) - Opcion de salir
 (hecho) - Diferenttes Pantallas
 (hecho) - Formulario de añadir Productos
-- Guardar datos Temporalmente
+(hecho)- Guardar datos Temporalmente
 - Mostrat datos listados en la pantalla home
 
 """
@@ -105,7 +105,20 @@ def info():
 
     return True
 
+def add_product():
+    products.append([
+        name_data.get(),
+        price_data.get(),
+        add_description_entry.get("1.0", "end-1c")
+    ])
+    name_data.set("")
+    price_data.set("")
+    add_description_entry.delete("1.0", END)
+
+    home()
+
 # Variables Importantes
+products = []
 name_data = StringVar()
 price_data = StringVar()
 
@@ -131,7 +144,7 @@ add_description_entry = Text(add_frame)
 
 add_separator = Label(add_frame)
 
-boton = Button(add_frame, text="Guardar")
+boton = Button(add_frame, text="Guardar", command=add_product)
 
 # cargar pantalla inicio
 home()

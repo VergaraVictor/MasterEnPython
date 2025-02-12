@@ -6,7 +6,7 @@ Crear un programa que tenga:
 (hecho) - un Menu (Inicio, Añadir, Información, Salir)
 (hecho) - Opcion de salir
 (hecho) - Diferenttes Pantallas
-- Formulario de añadir Productos
+(hecho) - Formulario de añadir Productos
 - Guardar datos Temporalmente
 - Mostrat datos listados en la pantalla home
 
@@ -34,6 +34,7 @@ def home():
 
     # ocultar otras pantallas
     add_label.grid_remove()
+    add_frame.grid_remove()
     info_label.grid_remove()
     data_label.grid_remove()
 
@@ -51,6 +52,7 @@ def add():
     add_label.grid(row=0, column=0, columnspan=10)
 
     # Campos del formulario
+    add_frame.grid(row=1)
     add_name_label.grid(row=1, column=0, padx=5, pady=5, sticky=E)
     add_name_entry.grid(row=1, column=1, padx=5, pady=5, sticky=W)
 
@@ -98,6 +100,7 @@ def info():
 
     # ocultar otras pantallas
     home_label.grid_remove()
+    add_frame.grid_remove()
     add_label.grid_remove()
 
     return True
@@ -115,18 +118,20 @@ info_label = Label(ventana, text="Información")
 data_label = Label(ventana, text="Creado por Víctor Vergara - 2025")
 
 # Campos del formulario
-add_name_label = Label(ventana, text="Nombre: ")
-add_name_entry = Entry(ventana, textvariable=name_data)
+add_frame = Frame(ventana)
 
-add_price_label = Label(ventana, text="Precio: ")
-add_price_entry = Entry(ventana, textvariable=price_data)
+add_name_label = Label(add_frame, text="Nombre: ")
+add_name_entry = Entry(add_frame, textvariable=name_data)
 
-add_description_label = Label(ventana, text="Descripción: ")
-add_description_entry = Text(ventana)
+add_price_label = Label(add_frame, text="Precio: ")
+add_price_entry = Entry(add_frame, textvariable=price_data)
 
-add_separator = Label(ventana)
+add_description_label = Label(add_frame, text="Descripción: ")
+add_description_entry = Text(add_frame)
 
-boton = Button(ventana, text="Guardar")
+add_separator = Label(add_frame)
+
+boton = Button(add_frame, text="Guardar")
 
 # cargar pantalla inicio
 home()

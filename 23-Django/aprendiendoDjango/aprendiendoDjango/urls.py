@@ -17,9 +17,15 @@ from django.contrib import admin
 from django.urls import path
 
 #Importar app con mis vistas
+# import miapp.views Otr forma de importación
 from miapp import views
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('hola-mundo/', views.hola_mundo, name="hola_mundo" )
+    path('', views.index, name="index"),
+    path('inicio/', views.index, name="inicio"),
+    path('hola-mundo/', views.hola_mundo, name="hola_mundo" ),
+    path('pagina-pruebas/', views.pagina, name="pagina")
+
 ]

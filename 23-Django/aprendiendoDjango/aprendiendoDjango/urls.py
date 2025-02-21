@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 
 #Importar app con mis vistas
-# import miapp.views Otr forma de importación
+# import miapp.views Otra forma de importación
 from miapp import views
 
 

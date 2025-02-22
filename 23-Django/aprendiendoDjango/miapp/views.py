@@ -4,6 +4,23 @@ from django.shortcuts import render, HttpResponse
 # MVC = Modelo Vista Controlador -> Acciones (metodos)
 # MVT = Modelo Template Vista -> Acciones (metodos)
 
+layout = """
+<h1>Sitio web con Django | Víctor Vergara</h1>
+<hr/>
+<ul>
+    <li>
+        <a href="/inicio">Inicio</a>
+    </li>
+    <li>
+        <a href="/hola-mundo">Hola Mundo</a>
+    </li>
+    <li>
+        <a href="/pagina-pruebas">Página de pruebas</a>
+    </li>
+</ul>
+<hr/>
+"""
+
 def index(request):
 
     html = """
@@ -21,16 +38,16 @@ def index(request):
 
     html += "</ul>"
 
-    return HttpResponse(html)
+    return HttpResponse(layout+html)
 
 def hola_mundo(request):
-    return HttpResponse("""
+    return HttpResponse(layout+"""
         <h1>hola mundo con Django!!</h1>
         <h3>Soy Víctor Vergara Web</h3>    
     """)
 
 def pagina(request):
-    return HttpResponse("""
+    return HttpResponse(layout+"""
         <h1>Página de mi web</h1>
         <p>Creado por víctor Robles</p>
     """)

@@ -3,8 +3,8 @@
 {% block title %} Hola Mundo en Django {% endblock %}
 
 {% block content %}
-
-<h1>hola mundo con Django!!</h1>
-<h3>Soy Víctor Vergara Web</h3>
+    {{ block.super }}
+    <h1>hola mundo con Django!!</h1>
+    <h3>Soy Víctor Vergara Web</h3>
 
 {% endblock %}

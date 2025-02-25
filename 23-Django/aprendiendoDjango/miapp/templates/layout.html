@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}
+        <!-- Titulo de cada página -->
+        {% endblock %}
+        | Víctor Vergara
+    </title>
+</head>
+<body>
+    <h1>Sitio web con Django | Víctor Vergara</h1>
+    <hr/>
+    <ul>
+        <li>
+            <a href="/inicio">Inicio</a>
+        </li>
+        <li>
+            <a href="/hola-mundo">Hola Mundo</a>
+        </li>
+        <li>
+            <a href="/pagina-pruebas">Página de pruebas</a>
+        </li>
+        <li>
+            <a href="/contacto-dos">Contacto</a>
+        </li>
+    </ul>
+    <hr/>
+
+    <div id="content">
+        {% block content %}
+            <!-- Codigo que viene de templates -->
+        {% endblock %}
+    </div>
+
+    <hr/>
+    <footer>
+        Master en Python &copy; Víctor Vergara
+    </footer>
+</body>
+</html>

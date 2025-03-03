@@ -13,32 +13,39 @@
     <link rel="stylesheet" typw="text/css" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-    <h1>Sitio web con Django | Víctor Vergara</h1>
-    <hr/>
-    <ul>
-        <li>
-            <a href="/inicio">Inicio</a>
-        </li>
-        <li>
-            <a href="/hola-mundo">Hola Mundo</a>
-        </li>
-        <li>
-            <a href="/pagina-pruebas">Página de pruebas</a>
-        </li>
-        <li>
-            <a href="/contacto-dos">Contacto</a>
-        </li>
-    </ul>
-    <hr/>
+    <!-- Cabecerade ka pagina -->
+    <header>
+        <div id="logotipo">
+            <!-- Logo django -->
+            <h1>Sitio web con Django</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <ul>
+            <li>
+                <a href="/inicio">Inicio</a>
+            </li>
+            <li>
+                <a href="/hola-mundo">Hola Mundo</a>
+            </li>
+            <li>
+                <a href="/pagina-pruebas">Página de pruebas</a>
+            </li>
+            <li>
+                <a href="/contacto-dos">Contacto</a>
+            </li>
+        </ul>
+    </nav>
 
     <div id="content">
+        <h2 class="title">Titulo prueba</h2>
         {% block content %}
             <!-- Codigo que viene de templates -->
             <strong>Contenido del bloque original!!!</strong>
         {% endblock %}
     </div>
 
-    <hr/>
     <footer>
         Master en Python &copy; Víctor Vergara
     </footer>

@@ -42,11 +42,13 @@ def index(request):
     html += "</ul>"
 
     nombre = 'Víctor Vergara2'
+    lenguajes = ['JavaScript', 'Python', 'PHP', 'C']
 
     return render(request, 'index.html', {
         'title': 'Inicio 2',
         'mi_variable': 'Soy un dato que está en la vista',
-        'nombre': nombre
+        'nombre': nombre,
+        'lenguajes': lenguajes
     })
 
 def hola_mundo(request):

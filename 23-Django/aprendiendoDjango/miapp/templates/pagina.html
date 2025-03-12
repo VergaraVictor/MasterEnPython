@@ -5,6 +5,30 @@
 {% block content %}
 
 <h1 class="title">Página de mi web</h1>
-<p>Creado por víctor Robles</p>
+<p>{{"Creado por víctor Vergara ñññ"|cut:"ñ" }}</p>
+
+<p>
+    {{texto|default:"no hay nada"}}
+</p>
+
+<p>
+    {{lista|join:', '}}
+</p>
+
+<p>
+    {{lista|random}}
+</p>
+
+<p>
+    {{"texto pruebas"|length}}
+</p>
+
+<p>
+    {{"texto Pruebas"|lower}}
+</p>
+
+<p>
+    {{"<h1>texto</h1> <strong>Pruebas</strong> hola <p> mundo </p>"|striptags|wordcount}}
+</p>
 
 {% endblock %}

@@ -114,8 +114,15 @@ def editar_articulo(request, id):
 
 def articulos(request):
 
-    articulos = Article.objects.order_by('id')[0:1]
+    # articulos = Article.objects.order_by('id')[0:1] Para ordenarlos y limitarlos segun mi necesidad
+    articulos = Article.objects.all()
     
     return render(request, 'articulos.html', {
         'articulos': articulos
     })
+
+def borrar_articulo(request, id):
+    articulo = Article.objects.get(pk=id)
+    articulo.delete()
+
+    return redirect('articulos')

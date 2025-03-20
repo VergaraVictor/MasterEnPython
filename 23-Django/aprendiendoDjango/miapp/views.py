@@ -111,3 +111,11 @@ def editar_articulo(request, id):
     articulo.save()
 
     return HttpResponse(f"Articulo {articulo.id} editado: {articulo.title} - {articulo.content}")
+
+def articulos(request):
+
+    articulos = Article.objects.all()
+    
+    return render(request, 'articulos.html', {
+        'articulos': articulos
+    })

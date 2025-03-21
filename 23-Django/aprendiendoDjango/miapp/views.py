@@ -114,6 +114,7 @@ def editar_articulo(request, id):
 
 def articulos(request):
 
+    # Esta es la forma de django ORM recomendable de hacer consltas a la base de datos
     # articulos = Article.objects.order_by('id')[0:1] Para ordenarlos y limitarlos segun mi necesidad
     articulos = Article.objects.all()
 
@@ -130,6 +131,9 @@ def articulos(request):
                                 ).exclude(
                                     public=False
                                 )
+    
+    # Consultas puras de SQL a la base de datos
+    articulos = Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo 2' AND public=0 ")
 
     return render(request, 'articulos.html', {
         'articulos': articulos

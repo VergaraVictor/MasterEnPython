@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse, redirect
 from miapp.models import Article
+from django.db.models import Q
 
 # Create your views here.
 # MVC = Modelo Vista Controlador -> Acciones (metodos)
@@ -124,16 +125,22 @@ def articulos(request):
 
     # articulos = Article.objects.filter(id__lte=11) # Menor o igual __lt menor que
 
-    articulos = Article.objects.filter(id__lte=11, title__contains="2")
+    articulos = Article.objects.filter(id__lte=11, title__contains="2") # esto es un AND 
 
+    articulos = Article.objects.filter(
+        Q(title__contains="2") | Q(public="True")
+    ) # PAra usar OR
+
+    """
     articulos = Article.objects.filter(
                                     title="Articulo",
                                 ).exclude(
                                     public=False
                                 )
+    """
     
     # Consultas puras de SQL a la base de datos
-    articulos = Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo 2' AND public=0 ")
+    # articulos = Article.objects.raw("SELECT * FROM miapp_article WHERE title='Articulo 2' AND public=0 ")
 
     return render(request, 'articulos.html', {
         'articulos': articulos

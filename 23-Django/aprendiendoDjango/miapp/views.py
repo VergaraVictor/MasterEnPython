@@ -116,7 +116,15 @@ def articulos(request):
 
     # articulos = Article.objects.order_by('id')[0:1] Para ordenarlos y limitarlos segun mi necesidad
     articulos = Article.objects.all()
+
+    # articulos = Article.objects.filter(title__iexact="articulo") # Para colocar condiciones 
     
+    # articulos = Article.objects.filter(id__gte=11) # Mayor o igual __gt mayor que
+
+    # articulos = Article.objects.filter(id__lte=11) # Menor o igual __lt menor que
+
+    articulos = Article.objects.filter(id__lte=11, title__contains="2")
+
     return render(request, 'articulos.html', {
         'articulos': articulos
     })

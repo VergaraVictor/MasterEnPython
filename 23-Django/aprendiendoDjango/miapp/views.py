@@ -92,15 +92,29 @@ def crear_articulo(request, title, content, public):
 
 
 def save_article(request):
-    articulo = Article(
-        title = title,
-        content = content,
-        public = public 
-    )
 
-    articulo.save()
+    if request.method == 'GET':
+        
+        title = request.GET['title']
 
-    return HttpResponse(f"Articulo creado: {articulo.title} - {articulo.content}")
+        if len(title) <= 5:
+            return HttpResponse("El titulo es muy pequeño")
+        content = request.GET['content']
+        public = request.GET['public']
+
+        articulo = Article(
+            title = title,
+            content = content,
+            public = public 
+        )
+
+        articulo.save()
+
+        return HttpResponse(f"Articulo creado: {articulo.title} - {articulo.content}")
+        
+    else:
+        return HttpResponse("<h2>No se ha podido crear el articulo</h2>")
+
 
 def create_article(request):
 
@@ -133,7 +147,7 @@ def articulos(request):
 
     # Esta es la forma de django ORM recomendable de hacer consltas a la base de datos
     # articulos = Article.objects.order_by('id')[0:1] Para ordenarlos y limitarlos segun mi necesidad
-    articulos = Article.objects.all()
+    articulos = Article.objects.all().order_by('-id')
 
     # articulos = Article.objects.filter(title__iexact="articulo") # Para colocar condiciones 
     
@@ -141,13 +155,13 @@ def articulos(request):
 
     # articulos = Article.objects.filter(id__lte=11) # Menor o igual __lt menor que
 
+    """
     articulos = Article.objects.filter(id__lte=11, title__contains="2") # esto es un AND 
 
     articulos = Article.objects.filter(
         Q(title__contains="2") | Q(public="True")
     ) # PAra usar OR
-
-    """
+    
     articulos = Article.objects.filter(
                                     title="Articulo",
                                 ).exclude(

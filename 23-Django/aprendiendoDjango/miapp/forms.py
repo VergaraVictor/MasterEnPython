@@ -1,23 +1,32 @@
 from django import forms
+from django.core import validators
 
 class FormArticle(forms.Form):
 
     title = forms.CharField(
         label= "Titulo",
         max_length=20,
-        required=False,
+        required=True,
         widget=forms.TextInput(
             attrs={
                 'placeholder': 'Mete el titulo',
                 'class': 'titulo_form_article'
             }
-        )
+        ),
+        validators=[
+            validators.MinLengthValidator(4, 'El titulo es demasiado corto'),
+            validators.RegexValidator('^[A-Za-z0-9ñ ]*$', 'El titulo esta mal formado', 'invalid_title')            
+        ]
     )
 
     content = forms.CharField(
         label = "Contenido",
-        widget=forms.Textarea
+        widget=forms.Textarea,
+        validators = [
+            validators.MaxLengthValidator(20, 'Te has pasado, has puesto mucho texto')
+        ]
     )
+
     content.widget.attrs.update({
         'placeholder': 'Mete el Contenido YAAA',
         'class': 'contenido_form_article',

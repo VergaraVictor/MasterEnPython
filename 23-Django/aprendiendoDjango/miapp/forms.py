@@ -23,7 +23,7 @@ class FormArticle(forms.Form):
         label = "Contenido",
         widget=forms.Textarea,
         validators = [
-            validators.MaxLengthValidator(20, 'Te has pasado, has puesto mucho texto')
+            validators.MaxLengthValidator(50, 'Te has pasado, has puesto mucho texto')
         ]
     )
 

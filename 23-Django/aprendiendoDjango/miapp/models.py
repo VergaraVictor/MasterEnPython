@@ -15,6 +15,13 @@ class Article(models.Model):
         verbose_name_plural = "Artículos"
         ordering = ['-created_at']
 
+    def __str__(self):
+        if self.public:
+            public = "(publicado)"
+        else:
+            public = "(privado)"
+        return f"{self.title} {public}"
+
 class Category(models.Model):
     name = models.CharField(max_length=110)
     description = models.CharField(max_length=250)

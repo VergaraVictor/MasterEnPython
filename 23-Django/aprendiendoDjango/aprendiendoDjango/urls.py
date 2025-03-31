@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 
 #Importar app con mis vistas
 # import miapp.views Otra forma de importación
@@ -40,3 +41,8 @@ urlpatterns = [
     path('create-article/', views.create_article, name="create"),
     path('create-full-article/', views.create_full_article, name="create_full")
 ]
+
+# Configuración para cargar imagenes.
+if settings.DEBUG:
+    from django.conf.urls.static import static
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

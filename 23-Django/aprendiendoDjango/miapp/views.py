@@ -188,7 +188,8 @@ def articulos(request):
 
     # Esta es la forma de django ORM recomendable de hacer consltas a la base de datos
     # articulos = Article.objects.order_by('id')[0:1] Para ordenarlos y limitarlos segun mi necesidad
-    articulos = Article.objects.all().order_by('-id')
+    # articulos = Article.objects.all().order_by('-id') PAra mostrar todos organizado por id
+    articulos = Article.objects.filter(public=True).order_by('-id')
 
     # articulos = Article.objects.filter(title__iexact="articulo") # Para colocar condiciones 
     

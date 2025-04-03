@@ -42,6 +42,9 @@ urlpatterns = [
     path('create-full-article/', views.create_full_article, name="create_full")
 ]
 
+# Configurar el titulo del panel de admin de django
+admin.site.site_header = "Master en Python - Victor Vergara"
+
 # Configuración para cargar imagenes.
 if settings.DEBUG:
     from django.conf.urls.static import static

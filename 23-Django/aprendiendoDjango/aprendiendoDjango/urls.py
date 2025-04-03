@@ -43,7 +43,11 @@ urlpatterns = [
 ]
 
 # Configurar el titulo del panel de admin de django
-admin.site.site_header = "Master en Python - Victor Vergara"
+title= "Master en Python - Victor Vergara" 
+admin.site.site_header = title
+# Configurar subtitulo de admin de django
+admin.site.site_title = title
+admin.site.index_title = "Panel de Gestión"
 
 # Configuración para cargar imagenes.
 if settings.DEBUG:

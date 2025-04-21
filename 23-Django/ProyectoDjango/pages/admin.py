@@ -1,7 +1,7 @@
 from django.contrib import admin
 from .models import Page
 
-# configuración extra para mi modelo
+# configuración extra para mi modelo en panel administrador de django
 class PageAdmin(admin.ModelAdmin):
     readonly_fields = ('created_at', 'update_at')
     search_fields = ('title', 'content')

@@ -1,31 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="es">
-    <head>
-        <meta charset="utf-8" />
-        <title>Aprendiendo Flask con Víctor Vergara</title>
-    </head>
-    <body>
+{% extends 'layout.html' %}
 
-        <h1>Aprendiendo Flask con Víctor Vergara</h1>
-        <hr/>
-            <ul>
-                <li>
-                    <a href="/">Inicio</a>
-                </li>
-                <li>
-                    <a href="{{url_for('informacion')}}">Informacion</a>
-                </li>
-                <li>
-                    <a href="{{url_for('contacto')}}">Contacto</a>
-                </li>
-                <li>
-                    <a href="{{url_for('lenguajes')}}">Lenguajes de Progración</a>
-                </li>
-            </ul>
-        <hr/>
+{% block title %}
+    Info
+{% endblock %}
 
-        <h1>Página de información</h1>
-        <p>Esta es la página de información</p>
-        <h3>{{texto}}</h3>
-    </body>
-</html>
+{% block content %}
+
+    <h1>Página de información</h1>
+    <p>Esta es la página de información</p>
+    <h3>{{texto}}</h3>
+
+{% endblock %}

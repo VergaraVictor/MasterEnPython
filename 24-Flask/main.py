@@ -5,7 +5,11 @@ app = Flask(__name__)
 #Crear ruta Flask
 @app.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('index.html', 
+                            dato1="Valor",
+                            dato2="Valor2",
+                            lista=["uno", "dos", "tres"]
+                        )
 
 @app.route('/informacion')
 @app.route('/informacion/<string:nombre>')

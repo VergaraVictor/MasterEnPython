@@ -7,8 +7,16 @@
     </head>
     <body>
 
-        <h1>Aprendiendo Flask con Víctor Vergara</h1>
-        <hr/>
+        <!-- Cabecerade ka pagina -->
+        <header>
+            <div id="logotipo">
+            <!-- Logo django -->
+            <img src="{{ url_for('static', filename='img/flask.png') }}" />
+            <h1>Flask con Víctor</h1>
+            </div>
+        </header>
+    
+        <nav>
             <ul>
                 <li>
                     <a href="/">Inicio</a>
@@ -23,16 +31,24 @@
                     <a href="{{url_for('lenguajes')}}">Lenguajes de Progración</a>
                 </li>
             </ul>
-        <hr/>
-        
-        <section id="content">
+        </nav>
+        <div class="barra">
+            <span class="esquina-izquierda"></span>
+            <span class="relleno-barra"></span>
+            <span class="esquina-derecha"></span>
+        </div>
+    
+        <div id="content">
+            <div class="box">
             {% block content %}
-
+            <!-- Codigo que viene de templates -->
+            <strong>Contenido del bloque original!!!</strong>
             {% endblock %}
-        </section>
-
+            </div>
+        </div>
+    
         <footer>
-            Máster en Python con Víctor Vergara
+            Master en Python &copy; Víctor Vergara
         </footer>
 
     </body>

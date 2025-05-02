@@ -10,23 +10,8 @@
 
     <h1>Página de Inicio</h1>
 
-    {% if edad >= 18 and edad <= 100 %}
-        <h2>Eres mayor de edad</h2>
-    {% elif edad > 100 %}
-        <h2>Eres muy anciano</h2>
-    {% elif edad < 18 %}    
-        <h2>Eres menor de edad</h2>
-    {% endif %}
-    <p>
-        Tu edad es: {{edad}}
-    </p>
-
-    <h2>Listado de personas</h2>
-    <ul>
-        {% for persona in personas%}    
-            <li>{{loop.index}}. {{persona}}</li>
-        {% endfor %}
-    </ul>
+    {% include 'includes/edad.html' %}
+    {% include 'includes/personas.html' %}    
 
     {# 
         {{dato1}}

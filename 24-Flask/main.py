@@ -16,7 +16,11 @@ def date_now():
 #Crear ruta Flask
 @app.route('/')
 def index():
+
+    edad = 101
+
     return render_template('index.html', 
+                            edad=edad,
                             dato1="Valor",
                             dato2="Valor2",
                             lista=["uno", "dos", "tres"]

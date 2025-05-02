@@ -18,12 +18,14 @@ def date_now():
 def index():
 
     edad = 101
+    personas = ['Víctor', 'Paco', 'Francisco', 'David']
 
     return render_template('index.html', 
                             edad=edad,
                             dato1="Valor",
                             dato2="Valor2",
-                            lista=["uno", "dos", "tres"]
+                            lista=["uno", "dos", "tres"],
+                            personas=personas
                         )
 
 @app.route('/informacion')

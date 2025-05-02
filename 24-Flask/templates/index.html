@@ -21,6 +21,13 @@
         Tu edad es: {{edad}}
     </p>
 
+    <h2>Listado de personas</h2>
+    <ul>
+        {% for persona in personas%}    
+            <li>{{loop.index}}. {{persona}}</li>
+        {% endfor %}
+    </ul>
+
     {# 
         {{dato1}}
         {{dato2}}

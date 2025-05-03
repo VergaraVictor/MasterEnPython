@@ -63,13 +63,20 @@ def contacto(redireccion = None):
 def lenguajes():
     return render_template('lenguajes.html')
 
-@app.route('/crear-coche')
+@app.route('/crear-coche', methods=['GET', 'POST'])
 def crear_coche():
     if request.method == 'POST':
-        cursor = mysql.connection.cursor()
-        cursor.execute(f"INSERT INTO coches VALUES(Null, 'Lambo', 'Gallardo', 100000, 'Los Angeles')")
-        cursor.connection.commit()
 
+        marca = request.form['marca']
+        modelo = request.form['modelo']
+        precio = request.form['precio']
+        ciudad = request.form['ciudad']
+
+        cursor = mysql.connection.cursor()
+        cursor.execute("INSERT INTO coches VALUES(Null, %s, %s, %s, %s)", (marca, modelo, precio, ciudad))
+        cursor.connection.commit()
+        
+        
         return redirect(url_for('index'))
     
     return render_template('crear_coche.html')

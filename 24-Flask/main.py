@@ -102,5 +102,15 @@ def coche(coche_id):
     
     return render_template('coche.html', coche=coche[0])
 
+@app.route('/borrar-coche/<coche_id>')
+def borrar_coche(coche_id):
+    cursor = mysql.connection.cursor()
+    cursor.execute(f"DELETE FROM coches WHERE id = {coche_id}")
+    mysql.connection.commit()
+
+    flash('El coche ha sido eliminado !!')
+    
+    return redirect(url_for('coches'))
+
 if __name__ == '__main__':
     app.run(debug=True)
